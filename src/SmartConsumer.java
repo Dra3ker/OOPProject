@@ -1,15 +1,15 @@
 public class SmartConsumer extends Consumer {
 
     private Controller controller;
-    private int sourceTreshhold;
-    private int batteryTreshold;
+    private int sourceThreshold;
+    private int batteryThreshold;
 
 
-    public SmartConsumer(int baseCharge, double activePos,Controller controller,int sourceTreshhold, int batteryTreshold) {
+    public SmartConsumer(int baseCharge, double activePos, Controller controller, int sourceThreshold, int batteryThreshold) {
         super(baseCharge, activePos);
         this.controller = controller;
-        this.batteryTreshold = batteryTreshold;
-        this.sourceTreshhold = sourceTreshhold;
+        this.batteryThreshold = batteryThreshold;
+        this.sourceThreshold = sourceThreshold;
     }
 
     //smarter version of Consumers getReqCharge method, which uses Data of Source and Battery
@@ -17,10 +17,10 @@ public class SmartConsumer extends Consumer {
     public int getReqCharge() {
         if(random.nextDouble() < activePos){
             int reqCharge = baseCharge;
-            if(controller.getSource().getCharge(controller.getSourceEff()) > sourceTreshhold){
+            if(controller.getSource().getCharge(controller.getSourceEff()) > sourceThreshold){
                 reqCharge += baseCharge;
             }
-            if(controller.getBattery().getCharge() > batteryTreshold){
+            if(controller.getBattery().getCharge() > batteryThreshold){
                 reqCharge += baseCharge;
             }
             return reqCharge;
