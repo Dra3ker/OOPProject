@@ -1,22 +1,24 @@
 public class Battery {
 
     private int maxCapacity;
-    private int charge;
+    private int charge; // current avaible charge
 
     public Battery(int maxCapacity){
         this.maxCapacity = maxCapacity;
         charge = 0;
     }
 
-    //returns the charge that needs to be taken from another source
+    //reduces charge by vol and returns int if more charge is taken than stored. Returns the difference or 0 if enough charge is available
     public int reduceCharge(int vol){
         charge -= vol;
         if(charge < 0){
-            return charge *-1;
+            int val = charge *-1;
+            charge = 0;
+            return val;
         }
         return 0;
     }
-    //returns overcharge
+    //returns overcharge and charges battery
     public int increaseCharge(int vol){
         charge += vol;
         if(charge > maxCapacity){

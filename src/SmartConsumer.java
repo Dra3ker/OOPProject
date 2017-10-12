@@ -12,6 +12,7 @@ public class SmartConsumer extends Consumer {
         this.sourceTreshhold = sourceTreshhold;
     }
 
+    //smarter version of Consumers getReqCharge method, which uses Data of Source and Battery
     @Override
     public int getReqCharge() {
         if(random.nextDouble() < activePos){

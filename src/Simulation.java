@@ -9,7 +9,7 @@ public class Simulation {
         this.controller = controller;
         random = new Random();
     }
-
+    //handles all the simulation stuff
     public void simulate(int time){
         for (int i = 0; i < time; i++) {
             System.out.println("Tick: " + i);

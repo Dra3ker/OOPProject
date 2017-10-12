@@ -6,6 +6,7 @@ public class Source {
         this.baseGen = baseGen;
     }
 
+    //calculates charge based on source efficiency
     public int getCharge(double sourceEff){
         return (int) (baseGen*sourceEff);
     }
