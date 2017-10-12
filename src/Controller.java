@@ -15,15 +15,15 @@ public class Controller {
 
     public void cycle(double sourceEff){
         this.sourceEff = sourceEff;
-        chargeBattery(sourceEff);
-        consume(sourceEff);
+        chargeBattery();
+        consume();
     }
 
-    private void chargeBattery(double sourceEff){
+    private void chargeBattery(){
         int toNetwork = battery.increaseCharge(source.getCharge(sourceEff));
         System.out.println("Charge to network: " + toNetwork);
     }
-    private void consume(double sourceEff){
+    private void consume(){
         int fromNetwork = 0;
         for (Consumer consumer:consumers) {
             fromNetwork += battery.reduceCharge(consumer.getReqCharge());
