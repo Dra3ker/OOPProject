@@ -8,7 +8,7 @@ public class Controller {
     private double sourceEff;
 
     public Controller(ArrayList<Consumer> consumers, Source source, Battery battery){
-        this. consumers = consumers;
+        this.consumers = consumers;
         this.battery = battery;
         this.source = source;
     }
