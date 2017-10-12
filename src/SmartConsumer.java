@@ -22,7 +22,7 @@ public class SmartConsumer extends Consumer {
             if(controller.getBattery().getCharge() > batteryTreshold){
                 reqCharge += baseCharge;
             }
-            return baseCharge;
+            return reqCharge;
         }
         return 0;
     }
