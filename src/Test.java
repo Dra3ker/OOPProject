@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Main {
+public class Test {
     public static void main(String[] args) {
 
         ArrayList<Consumer> consumers = new ArrayList<>();
