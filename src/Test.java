@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 
 public class Test {
+
+    /*
+    Der Aufbau der Klassen wurde gemeinsam besprochen und anschließend zusammen auf einem Laptop gecoded.
+     */
+
+
     public static void main(String[] args) {
 
         ArrayList<Consumer> consumers = new ArrayList<>();
